@@ -34,8 +34,17 @@ function onClick(evt) {
     }
 
     const instance = basicLightbox.create(
-        `<img src="${evt.target.dataset.source}" width="800" height="600">`
+        `<img src="${evt.target.dataset.source}" width="800" height="600">`,
+        {
+            onShow: (instance) => {
+                console.log('Lightbox is shown');
+            },
+            onClose: (instance) => {
+                console.log('Lightbox is closed');
+            }
+        }
     );
+
     instance.show();
 
     gallery.addEventListener('keydown', (evt) => {
