@@ -21,34 +21,32 @@ const addGallery = createGallery(galleryItems);
 
 gallery.insertAdjacentHTML("beforeend", addGallery)
 
-const links = gallery.querySelectorAll('.gallery__link');
+// const links = gallery.querySelectorAll('.gallery__link');
 
-const lightbox = new SimpleLightbox(links, {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250
+document.addEventListener('DOMContentLoaded', () => {
+    const links = gallery.querySelectorAll('.gallery__link');
+    const lightbox = new SimpleLightbox(links, {
+        captions: true,
+        captionsData: 'alt',
+        captionDelay: 250
+    });
+});
+
+// const lightbox = new SimpleLightbox(links, {
+//     captions: true,
+//     captionsData: 'alt',
+//     captionDelay: 250
     
-});
+// });
 
-function blockAction(evt) {
-    evt.preventDefault();
-}
-
-
-links.forEach(link => {
-    link.addEventListener('click', blockAction);
-});
-
-
-// gallery.addEventListener('click', onClick);
-
-// function onClick(evt) {
-//     console.log(evt.target)
+// function blockAction(evt) {
 //     evt.preventDefault();
-//     if (evt.target.nodeName !== 'IMG') {
-//         return;
-//     }
-
-//     gallery.addEventListener('click', onClick);
 // }
+
+
+// links.forEach(link => {
+//     link.addEventListener('click', blockAction);
+// });
+
+
 
