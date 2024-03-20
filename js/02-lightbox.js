@@ -21,32 +21,18 @@ const addGallery = createGallery(galleryItems);
 
 gallery.insertAdjacentHTML("beforeend", addGallery)
 
-// const links = gallery.querySelectorAll('.gallery__link');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const links = gallery.querySelectorAll('.gallery__link');
-    const lightbox = new SimpleLightbox(links, {
+    const lightbox = new SimpleLightbox('.gallery__link', {
         captions: true,
         captionsData: 'alt',
-        captionDelay: 250
+        captionPosition: 'bottom', 
+        captionDelay: 250,
+        disableDownload: true
     });
-});
-
-// const lightbox = new SimpleLightbox(links, {
-//     captions: true,
-//     captionsData: 'alt',
-//     captionDelay: 250
-    
-// });
-
-// function blockAction(evt) {
-//     evt.preventDefault();
-// }
 
 
-// links.forEach(link => {
-//     link.addEventListener('click', blockAction);
-// });
+
+
 
 
 
